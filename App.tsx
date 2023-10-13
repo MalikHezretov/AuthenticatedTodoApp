@@ -6,14 +6,14 @@
  */
 
 import React from 'react';
-import HomeScreen from './src/screens/HomeScreen';
-import {store} from './src/redux/store';
 import {Provider} from 'react-redux';
+import {store} from './src/redux/store';
+import NavigationStack from './src/Navigator';
 
 function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <HomeScreen />
+      <NavigationStack />
     </Provider>
   );
 }
