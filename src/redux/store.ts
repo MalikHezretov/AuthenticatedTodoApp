@@ -1,8 +1,12 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import todoReducers from './slice/todoSlice';
+import authReducer from './slice/authSlice';
 
 export const store = configureStore({
-  reducer: todoReducers,
+  reducer: combineReducers({
+    todoReducers,
+    authReducer,
+  }),
 });
 
 export type StoreDispatch = typeof store.dispatch;

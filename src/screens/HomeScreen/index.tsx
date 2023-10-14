@@ -21,7 +21,7 @@ import {deleteTodo, setCompletedStatus} from '../../redux/slice/todoSlice';
 import Images from '../../assets/images';
 
 const HomeScreen = (): JSX.Element => {
-  const todoList = useSelector((state: StoreState) => state);
+  const todoList = useSelector((state: StoreState) => state.todoReducers);
   const dispatch = useDispatch<StoreDispatch>();
   const navigation =
     useNavigation<

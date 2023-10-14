@@ -1,23 +1,23 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../screens/HomeScreen';
-import AddTodoScreen from '../screens/AddTodoScreen';
-
-const Stack = createNativeStackNavigator();
+import AppStack from './AppStack';
+import AuthStack from './AuthStack';
+import {useSelector} from 'react-redux';
+import {StoreState} from '../redux/store';
 
 export enum RouteNameEnum {
+  Auth = 'Auth',
   Home = 'Home',
   AddTodo = 'AddTodo',
 }
 
 const NavigationStack = () => {
+  const authReducer = useSelector((state: StoreState) => state.authReducer);
+  const isAuthenticated = authReducer.isAuthenticated;
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={RouteNameEnum.Home}>
-        <Stack.Screen name={RouteNameEnum.Home} component={HomeScreen} />
-        <Stack.Screen name={RouteNameEnum.AddTodo} component={AddTodoScreen} />
-      </Stack.Navigator>
+      {isAuthenticated ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };
