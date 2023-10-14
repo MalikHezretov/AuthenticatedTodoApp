@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   todItemStyle: {
     paddingVertical: 12,
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   todoTextStyle: {
     color: '#000000',
@@ -42,6 +43,10 @@ const styles = StyleSheet.create({
   },
   iconStyle: {
     borderColor: '#0096FF',
+  },
+  deleteIconStyle: {
+    height: 24,
+    width: 24,
   },
 });
 

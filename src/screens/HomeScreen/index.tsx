@@ -1,5 +1,12 @@
 import React from 'react';
-import {FlatList, SafeAreaView, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import CircleAddButton from '../../components/button';
@@ -10,7 +17,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {StoreDispatch, StoreState} from '../../redux/store';
 import {TodoModel} from '../../models/todoModel';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
-import {setCompletedStatus} from '../../redux/slice/todoSlice';
+import {deleteTodo, setCompletedStatus} from '../../redux/slice/todoSlice';
+import Images from '../../assets/images';
 
 const HomeScreen = (): JSX.Element => {
   const todoList = useSelector((state: StoreState) => state);
@@ -31,6 +39,10 @@ const HomeScreen = (): JSX.Element => {
     );
   };
 
+  const onPressDeleteIcon = (item: TodoModel) => {
+    dispatch(deleteTodo(item.todoId));
+  };
+
   const renderItem = ({item}: {item: TodoModel}) => {
     return (
       <View style={styles.todItemStyle}>
@@ -44,6 +56,12 @@ const HomeScreen = (): JSX.Element => {
           innerIconStyle={styles.innerIconStyle}
           onPress={() => onPressCheckbox(item)}
         />
+        <TouchableOpacity onPress={() => onPressDeleteIcon(item)}>
+          <Image
+            style={styles.deleteIconStyle}
+            source={Images.Icons.DeleteIcon}
+          />
+        </TouchableOpacity>
       </View>
     );
   };

@@ -28,8 +28,14 @@ const todoSlice = createSlice({
       );
       state[index].isCompleted = action.payload.isCompleted;
     },
+    deleteTodo(state, action: PayloadAction<string>) {
+      const index = state.findIndex(
+        (todo: TodoModel) => todo.todoId === action.payload,
+      );
+      state.splice(index, 1);
+    },
   },
 });
 
-export const {addTodo, setCompletedStatus} = todoSlice.actions;
+export const {addTodo, setCompletedStatus, deleteTodo} = todoSlice.actions;
 export default todoSlice.reducer;
