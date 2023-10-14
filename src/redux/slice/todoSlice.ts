@@ -19,8 +19,17 @@ const todoSlice = createSlice({
         } as TodoModel,
       }),
     },
+    setCompletedStatus(
+      state,
+      action: PayloadAction<{isCompleted: boolean; todoId: string}>,
+    ) {
+      const index = state.findIndex(
+        (todo: TodoModel) => todo.todoId === action.payload.todoId,
+      );
+      state[index].isCompleted = action.payload.isCompleted;
+    },
   },
 });
 
-export const {addTodo} = todoSlice.actions;
+export const {addTodo, setCompletedStatus} = todoSlice.actions;
 export default todoSlice.reducer;

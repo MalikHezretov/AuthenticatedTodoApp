@@ -1,16 +1,21 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  safeAreaViewContainer: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+  },
   container: {
     flex: 1,
+    padding: 24,
+    paddingBottom: 0,
   },
   titleStyle: {
-    paddingHorizontal: 24,
     fontSize: 28,
   },
   listContainer: {
     flex: 1,
-    padding: 24,
+    paddingVertical: 12,
   },
   buttonStyle: {
     width: 100,
@@ -19,11 +24,23 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignSelf: 'center',
   },
-  todoLabelStyle: {
-    fontSize: 18,
-  },
   addButtonContainerStyle: {
     alignItems: 'center',
+  },
+  todItemStyle: {
+    paddingVertical: 24,
+    borderWidth: 1,
+    borderColor: '#DEDEDE',
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderBottomWidth: 0,
+    flexDirection: 'row',
+  },
+  todoTextStyle: {
+    fontSize: 18,
+  },
+  todoFlatListStyle: {
+    marginTop: 6,
   },
 });
 
