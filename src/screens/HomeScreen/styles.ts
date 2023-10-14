@@ -28,19 +28,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   todItemStyle: {
-    paddingVertical: 24,
-    borderWidth: 1,
-    borderColor: '#DEDEDE',
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    borderBottomWidth: 0,
+    paddingVertical: 12,
     flexDirection: 'row',
   },
   todoTextStyle: {
-    fontSize: 18,
+    color: '#000000',
   },
   todoFlatListStyle: {
     marginTop: 6,
+  },
+  innerIconStyle: {
+    borderWidth: 2,
+  },
+  iconStyle: {
+    borderColor: '#0096FF',
   },
 });
 

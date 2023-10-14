@@ -36,13 +36,14 @@ const HomeScreen = (): JSX.Element => {
       <View style={styles.todItemStyle}>
         <BouncyCheckbox
           size={25}
+          text={item.todoDescription}
+          textStyle={!item?.isCompleted && styles.todoTextStyle}
           fillColor="#0096FF"
           unfillColor="#FFFFFF"
-          iconStyle={{borderColor: '#0096FF'}}
-          innerIconStyle={{borderWidth: 2}}
+          iconStyle={styles.iconStyle}
+          innerIconStyle={styles.innerIconStyle}
           onPress={() => onPressCheckbox(item)}
         />
-        <Text style={styles.todoTextStyle}>{item.todoDescription}</Text>
       </View>
     );
   };
