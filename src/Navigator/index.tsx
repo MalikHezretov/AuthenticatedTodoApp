@@ -7,8 +7,8 @@ import AddTodoScreen from '../screens/AddTodoScreen';
 const Stack = createNativeStackNavigator();
 
 export enum RouteNameEnum {
-  Home = 'HomeScreen',
-  AddTodo = 'AddTodoScreen',
+  Home = 'Home',
+  AddTodo = 'AddTodo',
 }
 
 const NavigationStack = () => {

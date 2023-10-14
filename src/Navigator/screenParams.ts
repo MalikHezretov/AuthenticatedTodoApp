@@ -1,4 +1,4 @@
 export type NavStackParamList = {
-  HomeScreen: undefined;
-  AddTodoScreen: undefined;
+  Home: undefined;
+  AddTodo: undefined;
 };
