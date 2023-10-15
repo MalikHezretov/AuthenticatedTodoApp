@@ -7,10 +7,12 @@ import {StoreState} from '../redux/store';
 
 const NavigationStack = () => {
   const authReducer = useSelector((state: StoreState) => state.authReducer);
+  // get the authenticated status from the auth reducer
   const isAuthenticated = authReducer.isAuthenticated;
 
   return (
     <NavigationContainer>
+      {/** switch navigation stacks once the user authenticates successfully */}
       {isAuthenticated ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );

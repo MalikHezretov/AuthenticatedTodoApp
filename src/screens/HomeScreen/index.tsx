@@ -30,6 +30,7 @@ const HomeScreen = (): JSX.Element => {
 
   const onPressAdd = () => navigation.navigate(RouteNameEnum.AddTodo);
 
+  // set the completed status of the todo
   const onPressCheckbox = (item: TodoModel) => {
     dispatch(
       setCompletedStatus({
@@ -43,6 +44,7 @@ const HomeScreen = (): JSX.Element => {
     dispatch(deleteTodo(item.todoId));
   };
 
+  // rendering list of todos
   const renderItem = ({item}: {item: TodoModel}) => {
     return (
       <View style={styles.todItemStyle}>
@@ -71,6 +73,7 @@ const HomeScreen = (): JSX.Element => {
       <View style={styles.container}>
         <Text style={styles.titleStyle}>My Todos</Text>
         <View style={styles.listContainer}>
+          {/** list of todos */}
           <FlatList
             data={todoList}
             renderItem={renderItem}

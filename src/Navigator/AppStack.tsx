@@ -6,6 +6,7 @@ import {RouteNameEnum} from './screenTypes';
 
 const Stack = createNativeStackNavigator();
 
+// App stack navigation stack of screens available to the user once they authenticate
 const AppStack = () => {
   return (
     <Stack.Navigator initialRouteName={RouteNameEnum.Home}>

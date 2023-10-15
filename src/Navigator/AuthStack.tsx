@@ -5,6 +5,7 @@ import {RouteNameEnum} from './screenTypes';
 
 const Stack = createNativeStackNavigator();
 
+// navigation stack of screens before user logs in
 const NavigationStack = () => {
   return (
     <Stack.Navigator initialRouteName={RouteNameEnum.Auth}>

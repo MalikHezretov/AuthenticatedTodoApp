@@ -9,6 +9,7 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: {
+      // add new todo to current todos
       reducer: (state, action: PayloadAction<TodoModel>) => {
         state.push(action.payload);
       },
@@ -19,6 +20,7 @@ const todoSlice = createSlice({
         } as TodoModel,
       }),
     },
+    // update the completed status of the todo
     setCompletedStatus(
       state,
       action: PayloadAction<{isCompleted: boolean; todoId: string}>,
@@ -28,6 +30,7 @@ const todoSlice = createSlice({
       );
       state[index].isCompleted = action.payload.isCompleted;
     },
+    // delete todo from existing todo list
     deleteTodo(state, action: PayloadAction<string>) {
       const index = state.findIndex(
         (todo: TodoModel) => todo.todoId === action.payload,

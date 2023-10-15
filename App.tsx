@@ -12,7 +12,10 @@ import NavigationStack from './src/Navigator';
 
 function App(): JSX.Element {
   return (
+    // App entry point
+    // Wrap NavigationStack with Provider so the app state available through the nav stack
     <Provider store={store}>
+      {/** Nav stack that contains auth and app screens */}
       <NavigationStack />
     </Provider>
   );
