@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import * as LocalAuthentication from 'expo-local-authentication';
 import {StoreDispatch} from '../../redux/store';
 import {useDispatch} from 'react-redux';
@@ -71,8 +71,12 @@ const AuthScreen = (): JSX.Element => {
   return (
     <View style={styles.container}>
       {facialRecognitionAvailable || fingerprintAvailable ? (
-        <Button onPress={authenticate} title="Authenticate" />
-      ) : null}
+        <TouchableOpacity onPress={authenticate} style={styles.authButtonStyle}>
+          <Text style={styles.authTextStyle}>Authenticate</Text>
+        </TouchableOpacity>
+      ) : (
+        <Text>{result}</Text>
+      )}
     </View>
   );
 };

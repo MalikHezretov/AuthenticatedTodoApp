@@ -5,8 +5,9 @@ import {
   TextInput,
   Platform,
   TouchableWithoutFeedback,
-  Button,
   Keyboard,
+  TouchableOpacity,
+  Text,
 } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useNavigation} from '@react-navigation/native';
@@ -15,7 +16,7 @@ import styles from './styles';
 import {useDispatch} from 'react-redux';
 import {addTodo} from '../../redux/slice/todoSlice';
 import {NavStackParamList} from '../../Navigator/screenParams';
-import {RouteNameEnum} from '../../Navigator';
+import {RouteNameEnum} from '../../Navigator/screenTypes';
 
 const AddTodoScreen = () => {
   const navigation =
@@ -42,11 +43,16 @@ const AddTodoScreen = () => {
             value={todo}
             inputMode="text"
             placeholder="What are you planning?"
+            placeholderTextColor="#a9a9a9"
             onChangeText={setTodo}
             style={styles.textInput}
           />
           <View style={styles.btnContainer}>
-            <Button title="Create" color="#FFFFFF" onPress={onPressCreate} />
+            <TouchableOpacity
+              style={styles.createButtonStyle}
+              onPress={onPressCreate}>
+              <Text style={styles.createButtonTextStyle}>Create</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </TouchableWithoutFeedback>
