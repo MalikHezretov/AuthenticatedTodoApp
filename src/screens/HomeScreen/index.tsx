@@ -10,7 +10,6 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import CircleAddButton from '../../components/button';
-import {RouteNameEnum} from '../../Navigator';
 import {NavStackParamList} from '../../Navigator/screenParams';
 import styles from './styles';
 import {useDispatch, useSelector} from 'react-redux';
@@ -19,6 +18,7 @@ import {TodoModel} from '../../models/todoModel';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import {deleteTodo, setCompletedStatus} from '../../redux/slice/todoSlice';
 import Images from '../../assets/images';
+import {RouteNameEnum} from '../../Navigator/screenTypes';
 
 const HomeScreen = (): JSX.Element => {
   const todoList = useSelector((state: StoreState) => state.todoReducers);

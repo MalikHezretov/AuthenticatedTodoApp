@@ -2,7 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import AddTodoScreen from '../screens/AddTodoScreen';
-import {RouteNameEnum} from '.';
+import {RouteNameEnum} from './screenTypes';
 
 const Stack = createNativeStackNavigator();
 

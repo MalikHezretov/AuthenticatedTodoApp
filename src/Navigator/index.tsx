@@ -5,12 +5,6 @@ import AuthStack from './AuthStack';
 import {useSelector} from 'react-redux';
 import {StoreState} from '../redux/store';
 
-export enum RouteNameEnum {
-  Auth = 'Auth',
-  Home = 'Home',
-  AddTodo = 'AddTodo',
-}
-
 const NavigationStack = () => {
   const authReducer = useSelector((state: StoreState) => state.authReducer);
   const isAuthenticated = authReducer.isAuthenticated;
